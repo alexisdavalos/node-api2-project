@@ -14,7 +14,7 @@ function App() {
     title: '',
     contents: ''
   })
-  console.log(newPost);
+  // console.log(newPost);
   useEffect(() => {
     axios.get('http://localhost:5000/api/posts/') //gets list of posts
     .then(res => {
@@ -65,7 +65,7 @@ function App() {
             <button>Submit</button>
           </form>
           <div>
-            <PostsWrapper setFetch={setFetch} posts={posts}/>
+            <PostsWrapper newPost={newPost} setNewPost={setNewPost} setFetch={setFetch} posts={posts}/>
           </div>
       </header>
       </div>
