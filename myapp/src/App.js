@@ -12,7 +12,7 @@ function App() {
   const [fetch, setFetch]= useState(false);
   const [newPost, setNewPost] = useState({
     title: '',
-    content: ''
+    contents: ''
   })
   console.log(newPost);
   useEffect(() => {
@@ -40,7 +40,7 @@ function App() {
     .post('http://localhost:5000/api/posts', newPost)
     .then(res => console.log(res))
     .catch(err => console.log(err))
-    setNewPost({title: '', content: ''})
+    setNewPost({title: '', contents: ''})
   }
   console.log(`posts State:`, posts)
   return (
@@ -50,13 +50,13 @@ function App() {
  
           <h1>Node API II Project</h1>
           <form onSubmit={e => handleSubmit(e)}>
-            <label>Name</label>
+            <label>Title</label>
             <input
               name='title'
               value={newPost.title}
               onChange={handleChange}
             />
-            <label>Bio</label>
+            <label>Contents</label>
             <input
               name='contents'
               value={newPost.contents}

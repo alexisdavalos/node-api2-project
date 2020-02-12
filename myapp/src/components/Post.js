@@ -18,7 +18,7 @@ const Post = (props) =>{
         <div className='user'>
             <h5>Title: {props.post.title}</h5>
             <p>Contents: {props.post.contents}</p>
-            <button onClick={() => handleDelete()}>Delete</button>
+            <button className='deleteButton' onClick={() => handleDelete()}>Delete</button>
             <button>Update</button>
         </div>
     )
