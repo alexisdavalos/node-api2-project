@@ -7,7 +7,7 @@ const router = express.Router();
 //Get Routes
 router.get('/', (req, res) => {
     
-    Posts.find(req.query)
+    Posts.find()
         .then(posts => {
             res.status(200).json(posts);
         })
