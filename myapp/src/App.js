@@ -22,7 +22,7 @@ function App() {
   console.log('Update Post:', updatePost)
   // console.log(newPost);
   useEffect(() => {
-    axios.get('http://localhost:5000/api/posts/') //gets list of posts
+    axios.get('http://localhost:4000/api/posts/') //gets list of posts
     .then(res => {
       console.log('response from localhost:5000:', res)
       console.log('setting data to posts State...', res.data)
@@ -49,7 +49,7 @@ function App() {
     e.preventDefault()
     setFetch(true);
     axios
-    .post('http://localhost:5000/api/posts', newPost)
+    .post('http://localhost:4000/api/posts', newPost)
     .then(res => console.log(res))
     .catch(err => console.log(err))
     setNewPost({title: '', contents: ''})
@@ -59,8 +59,8 @@ function App() {
     console.log('....updating post.....')
     // setFetch(true);
     axios
-    .put(`http://localhost:5000/api/posts/${updatePost.id}`, updatePost)
-    .then(setFetch(true))
+    .put(`http://localhost:4000/api/posts/${updatePost.id}`, updatePost)
+    .then(res => setFetch(true))
     .catch()
     setUpdate({title:'', contents: ''})
     setFetch(false);

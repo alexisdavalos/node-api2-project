@@ -6,7 +6,7 @@ const Post = (props) =>{
     const handleDelete = (e) =>{
         e.preventDefault();
         props.setFetch(true)
-        axios.delete(`http://localhost:5000/api/posts/${props.post.id}`)
+        axios.delete(`http://localhost:4000/api/posts/${props.post.id}`)
         .then(res=> props.setFetch(false))
         .catch(err => console.log(err))
         
